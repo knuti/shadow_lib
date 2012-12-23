@@ -8,6 +8,7 @@ gem 'activeadmin'    # easy to use backend
 # Additionals
 gem 'bitfields' # using this for defining roles
 gem 'cancan'    # using this for authorization
+gem 'activeadmin-cancan'
 
 # For deployment on heroku
 gem 'heroku'       # app host
