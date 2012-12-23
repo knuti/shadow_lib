@@ -1,0 +1,10 @@
+== Welcome to my shadow-lib
+
+1. Moving private_lib to this one (due to some ideas)
+       <tt>YEAH</tt>
+
+2. Cause I did not know a better way
+
+* just playing around
+* find a way to migrate the data
+
