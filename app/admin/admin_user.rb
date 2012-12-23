@@ -5,6 +5,9 @@ ActiveAdmin.register AdminUser do
   index do
     column :email
     column :username
+    column :role do |user|
+      %w(ded wizard runner foo trainee)[user.role_bits]
+    end
     column :current_sign_in_at
     column :last_sign_in_at
     column :sign_in_count
