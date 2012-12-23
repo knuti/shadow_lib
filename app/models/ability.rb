@@ -7,11 +7,12 @@ class Ability
     if admin_user.wizard?
       can :manage, :all # only super_admin can add new users!
 
-    # elsif admin_user.runner?
-    #   can :read, :admin_user, id: admin_user.id
+    elsif admin_user.runner?
+      # can :read, :admin_user, id: admin_user.id
+      can :manage, Shadowrule
 
-    # elsif admin_user.trainee?
-    #   can :read, :admin_user, id: admin_user.id
+    elsif admin_user.trainee?
+      can :read, Shadowrule
 
     end
 
