@@ -11,3 +11,7 @@ require 'machinist/active_record'
 AdminUser.blueprint do
   # Attributes here
 end
+
+Shadowrule.blueprint do
+  # Attributes here
+end
