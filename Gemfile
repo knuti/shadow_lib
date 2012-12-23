@@ -3,12 +3,16 @@ source 'https://rubygems.org'
 # Basics
 gem 'rails', '3.2.9' # framework
 gem 'pg'             # database connector
-gem 'activeadmin'    # easy to use backend
+# gem 'activeadmin'    # easy to use backend
+
+# Additionals
+gem 'bitfields' # using this for defining roles
+gem 'cancan'    # using this for authorization
 
 # For deployment on heroku
 gem 'heroku'       # app host
-gem 'unicorn'      # worker for serving requests
-gem 'newrelic_rpm' # monitoring add on for heroku
+# gem 'unicorn'      # worker for serving requests
+# gem 'newrelic_rpm' # monitoring add on for heroku
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -33,7 +37,8 @@ gem 'debugger'
 
 # For better developing
 group :test, :development do
-  gem 'rspec-rails' # testing the app
+  gem 'rspec'       # testing the app
+  gem 'rspec-rails' # needed for rails
   gem 'simplecov'   # overview of testcoverage
   gem 'capybara'    # allowing to test log in stuff
   gem 'machinist'   # building the models for testing
