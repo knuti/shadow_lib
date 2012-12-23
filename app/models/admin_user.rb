@@ -12,7 +12,7 @@ class AdminUser < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :role_bits
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :role_bits, :username
   # attr_accessible :title, :body
 
   validates :password, :confirmation => true
