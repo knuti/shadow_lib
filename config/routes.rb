@@ -1,4 +1,6 @@
 ShadowLib::Application.routes.draw do
+  get "statics/index"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
