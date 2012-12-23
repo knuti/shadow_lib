@@ -1,4 +1,7 @@
 ActiveAdmin.register AdminUser do
+
+  menu label: "Accounts", parent: "Administration", if: proc { can? :manage, AdminUser }
+
   index do
     column :email
     column :current_sign_in_at
