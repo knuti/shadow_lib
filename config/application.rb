@@ -65,6 +65,10 @@ module ShadowLib
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    # ActiveAdmin states, that deploying rails 3.1 on heroku might use this
+    # (don't know if still right since this is 3.2.9)
+    config.assets.initialize_on_precompile = false
+
     # Use machinist und model generation
     config.generators do |g|
       g.fixture_replacement :machinist
