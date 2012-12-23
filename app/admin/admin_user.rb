@@ -4,6 +4,7 @@ ActiveAdmin.register AdminUser do
 
   index do
     column :email
+    column :username
     column :current_sign_in_at
     column :last_sign_in_at
     column :sign_in_count
@@ -11,6 +12,7 @@ ActiveAdmin.register AdminUser do
   end
 
   filter :email
+  filter :username
 
   form do |f|
     f.inputs "Admin Details" do
@@ -18,6 +20,7 @@ ActiveAdmin.register AdminUser do
       f.input :password
       f.input :password_confirmation
       f.input :role_bits #, as: :select # :check_box
+      f.input :username
     end
     f.actions
   end
