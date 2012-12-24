@@ -22,8 +22,33 @@ ActiveAdmin.register Character do
   form do |f|
     f.inputs "Character Details" do
       f.input :name
-      f.input :race, as: :select, values: Character::CHAR_RACES
-      f.input :char_class
+      f.input :race, collection: Character::CHAR_RACES
+      f.input :char_class, collection: Character::CHAR_CLASSES
+      f.input :age
+      f.input :armor_items
+      f.input :ballistic_armor
+      f.input :burst_armor
+      f.input :charisma
+      f.input :connections
+      f.input :constitution
+      f.input :cyberware
+      f.input :description
+      f.input :essence
+      f.input :gear
+      f.input :initiative
+      f.input :intelligence
+      f.input :mana
+      f.input :other_stuff
+      f.input :reaction
+      f.input :sex, collection: %w(male female)
+      f.input :skills
+      f.input :speed
+      f.input :spells
+      f.input :strength
+      f.input :admin_user_id, as: :hidden, value: character.admin_user_id || current_admin_user.id
+      f.input :visibility, collection: Character::CHAR_VISIBILITIES
+      f.input :weapons
+      f.input :willpower
     end
     f.actions
   end
