@@ -9,7 +9,6 @@ de:
     - Fr
     - Sa
     abbr_month_names:
-    -
     - Jan
     - Feb
     - Mär
@@ -35,7 +34,6 @@ de:
       long: ! '%e. %B %Y'
       short: ! '%e. %b'
     month_names:
-    -
     - Januar
     - Februar
     - März
@@ -197,6 +195,28 @@ de:
 
   character:
     admin_user: 'Chummer von'
+    race: Rasse
+    char_class: Charakterklasse
+    gender:
+    - männlich
+    - weiblich
+    races:
+    - Elf
+    - Mensch
+    - Ork
+    - Troll
+    - Zwerg
+    classes:
+    - Zauberer
+    - Decker
+    - Rigger
+    - Schamane
+    - Ki-Adept
+    visibility:
+      - publik
+      - Runner
+      - 'Nur ich'
+
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   # activemodel:
   #   errors:

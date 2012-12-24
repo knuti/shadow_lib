@@ -4,9 +4,9 @@ ActiveAdmin.register Character do
 
   index do
     column :name
-    column :race
-    column :char_class
-    column :creator do |char|
+    column I18n.t('character.race'), :race
+    column I18n.t('character.char_class'), :char_class
+    column I18n.t('character.admin_user') do |char|
       char.admin_user.username
     end
     column :created_at
@@ -22,8 +22,8 @@ ActiveAdmin.register Character do
   form do |f|
     f.inputs "Character Details" do
       f.input :name
-      f.input :race, collection: Character::CHAR_RACES
-      f.input :char_class, collection: Character::CHAR_CLASSES
+      f.input :race, collection: I18n.t('character.races')
+      f.input :char_class, collection: I18n.t('character.classes')
       f.input :age
       f.input :armor_items
       f.input :ballistic_armor
@@ -40,13 +40,13 @@ ActiveAdmin.register Character do
       f.input :mana
       f.input :other_stuff
       f.input :reaction
-      f.input :sex, collection: %w(male female)
+      f.input :sex, collection: I18n.t('character.gender')
       f.input :skills
       f.input :speed
       f.input :spells
       f.input :strength
       f.input :admin_user_id, as: :hidden, value: character.admin_user_id || current_admin_user.id
-      f.input :visibility, collection: Character::CHAR_VISIBILITIES
+      f.input :visibility, collection: I18n.t('character.visibility')
       f.input :weapons
       f.input :willpower
     end

@@ -9,7 +9,6 @@ en:
     - Fri
     - Sat
     abbr_month_names:
-    -
     - Jan
     - Feb
     - Mar
@@ -35,7 +34,6 @@ en:
       long: ! '%B %d, %Y'
       short: ! '%b %d'
     month_names:
-    -
     - January
     - February
     - March
@@ -196,10 +194,27 @@ en:
       long: ! '%B %d, %Y %H:%M'
       short: ! '%d %b %H:%M'
     pm: pm
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
-  # activemodel:
-  #   errors:
-  #     <<: *errors
-  # activerecord:
-  #   errors:
-  #     <<: *errors
+
+  character:
+    admin_user: 'Chummer from'
+    race: Race
+    char_class: Characterclass
+    gender:
+    - male
+    - female
+    races:
+    - Elf
+    - Human
+    - Orc
+    - Troll
+    - Dwarv
+    classes:
+    - Wizard
+    - Decker
+    - Rigger
+    - Schaman
+    - Qi-Adept
+    visibility:
+      - public
+      - runner
+      - myself
