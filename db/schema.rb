@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121224001137) do
+ActiveRecord::Schema.define(:version => 20121224083142) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(:version => 20121224001137) do
     t.string   "visibility"
     t.datetime "created_at",                                                  :null => false
     t.datetime "updated_at",                                                  :null => false
+    t.integer  "age"
+    t.string   "sex"
   end
 
   add_index "characters", ["char_class"], :name => "index_characters_on_char_class"

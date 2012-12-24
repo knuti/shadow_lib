@@ -1,5 +1,5 @@
 class Character < ActiveRecord::Base
-  attr_accessible :age, :armor_items, :ballistic_armor, :burst_armor, :char_class, :charisma, :connections, :constitution, :created_at, :cyberware, :description, :essence, :gear, :initiative, :intelligence, :mana, :name, :other_stuff, :race, :reaction, :sex, :skills, :speed, :spells, :strength, :updated_at, :user_id, :visibility, :weapons, :willpower
+  attr_accessible :age, :armor_items, :ballistic_armor, :burst_armor, :char_class, :charisma, :connections, :constitution, :created_at, :cyberware, :description, :essence, :gear, :initiative, :intelligence, :mana, :name, :other_stuff, :race, :reaction, :sex, :skills, :speed, :spells, :strength, :updated_at, :user_id, :visibility, :weapons, :willpower, :admin_user_id
 
   belongs_to :admin_user
 
