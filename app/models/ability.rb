@@ -10,9 +10,12 @@ class Ability
     elsif admin_user.runner?
       # can :read, :admin_user, id: admin_user.id
       can :manage, Shadowrule
+      can :read, Character, visibility: 'runner'
+      can :manage, Character, admin_user_id: admin_user.id
 
     elsif admin_user.trainee?
       can :read, Shadowrule
+      can :read, Character, visibility: 'publik'
 
     end
 
