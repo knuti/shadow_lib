@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121223230814) do
+ActiveRecord::Schema.define(:version => 20121224001137) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -48,6 +48,41 @@ ActiveRecord::Schema.define(:version => 20121223230814) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
   add_index "admin_users", ["username"], :name => "index_admin_users_on_username", :unique => true
+
+  create_table "characters", :force => true do |t|
+    t.integer  "admin_user_id"
+    t.string   "name"
+    t.string   "char_class",      :limit => 20
+    t.text     "description"
+    t.string   "race",            :limit => 10
+    t.string   "constitution",    :limit => 10
+    t.string   "speed",           :limit => 10
+    t.string   "strength",        :limit => 10
+    t.string   "charisma",        :limit => 10
+    t.string   "intelligence",    :limit => 10
+    t.string   "willpower",       :limit => 10
+    t.decimal  "essence",                       :precision => 8, :scale => 2
+    t.integer  "mana",            :limit => 2
+    t.string   "reaction",        :limit => 10
+    t.string   "initiative",      :limit => 20
+    t.text     "gear"
+    t.text     "cyberware"
+    t.text     "spells"
+    t.text     "weapons"
+    t.text     "skills"
+    t.text     "connections"
+    t.text     "other_stuff"
+    t.text     "armor_items"
+    t.integer  "ballistic_armor", :limit => 2
+    t.integer  "burst_armor",     :limit => 2
+    t.string   "visibility"
+    t.datetime "created_at",                                                  :null => false
+    t.datetime "updated_at",                                                  :null => false
+  end
+
+  add_index "characters", ["char_class"], :name => "index_characters_on_char_class"
+  add_index "characters", ["race"], :name => "index_characters_on_race"
+  add_index "characters", ["visibility"], :name => "index_characters_on_visibility"
 
   create_table "shadowrules", :force => true do |t|
     t.string   "title",       :null => false

@@ -29,6 +29,9 @@ class AdminUser < ActiveRecord::Base
                        :uniqueness => true
 
 
+  has_many :characters
+
+
   before_validation do |user|
     if user.password.blank? && user.password_confirmation.blank?
       user.password = user.password_confirmation = nil

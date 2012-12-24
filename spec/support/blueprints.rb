@@ -15,3 +15,7 @@ end
 Shadowrule.blueprint do
   # Attributes here
 end
+
+Character.blueprint do
+  # Attributes here
+end
