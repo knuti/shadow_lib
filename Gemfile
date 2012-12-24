@@ -12,8 +12,8 @@ gem 'activeadmin-cancan'
 
 # For deployment on heroku
 gem 'heroku'       # app host
-# gem 'unicorn'      # worker for serving requests
-# gem 'newrelic_rpm' # monitoring add on for heroku
+gem 'unicorn'      # worker for serving requests
+gem 'newrelic_rpm' # monitoring add on for heroku
 
 # Gems used only for assets and not required
 # in production environments by default.
