@@ -195,6 +195,9 @@ en:
       short: ! '%d %b %H:%M'
     pm: pm
 
+  public:
+    chars: "Sample Characters"
+
   character:
     admin_user: 'Chummer from'
     race: Race

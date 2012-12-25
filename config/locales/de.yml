@@ -193,6 +193,13 @@ de:
       short: ! '%d. %B, %H:%M Uhr'
     pm: nachmittags
 
+  devise:
+    failure:
+      already_authenticated: "Bereits eingeloggt"
+
+  public:
+    chars: "Beispielcharaktere"
+
   character:
     admin_user: 'Chummer von'
     race: Rasse
