@@ -1,3 +1,137 @@
 // Place all the styles related to the statics controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+ * variables to use
+ */
+$base_background: rgb(230, 230, 230);
+// $base_transparency: rgba(160, 160, 160, 0.5);
+$base_transparency: rgba(255, 255, 255, 0.5);
+
+#welcome_img > img{
+  width: 360px;
+  height: 440px;
+  float: left;
+  padding: 5px;
+}
+
+#welcome_text {
+  width: 540px;
+  float: left;
+  padding-left: 15px;
+  margin-left: 10px;
+}
+
+#welcome_text p {
+  text-align: justify;
+  padding: 5px;
+  margin: 5px;
+}
+
+.upcase {
+  text-transform: uppercase;
+}
+
+
+/*
+ * general stuff
+ */
+body{
+  // background-image: $base_bckgrd_img;
+  background-color: $base_background;
+}
+
+h1 {
+  text-align: center;
+}
+
+.mail {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.third, .footer {
+  width: 30%;
+  float: left;
+  margin: 5px;
+  padding: 5px;
+}
+
+.clear {
+  clear: both;
+}
+
+#container {
+  width: 960px;
+  margin: auto;
+}
+
+.justy {
+  text-align: justify;
+}
+
+
+/*
+ * navigation bar
+ */
+nav {
+  text-align: right;
+  background-color: $base_transparency;
+}
+
+nav li{
+  margin: 2px;
+  padding: 3px;
+  display: inline-block;
+  text-decoration: none;
+  padding-right: 15px;
+  border-right: 2px dotted black;
+}
+
+.last {
+  border: none;
+}
+
+nav li a {
+  text-decoration: none;
+  color: black;
+}
+
+nav li a:hover {
+  color: black;
+  background-color: white;
+  text-decoration: underline;
+}
+
+nav li a:visited {
+  color: black;
+}
+
+
+/*
+ * content
+ */
+#content {
+  background-color: $base_transparency;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/*
+ * footer
+ */
+#footer {
+  background-color: $base_transparency;
+  width: 960px;
+  height: 150px;
+  padding: 0;
+}
+
+.end p {
+  padding-top: 5px;
+  text-align: right;
+}
+
+.logo {
+  width: 30%;
+}
+
