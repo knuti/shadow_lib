@@ -1,4 +1,5 @@
 ActiveAdmin.register Shadowrule do
+  config.sort_order = "title_asc"
 
   menu label: "Explained Rules", parent: "Shadowrun Wiki", if: proc { can? :read, Shadowrule }
 
