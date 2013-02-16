@@ -1,0 +1,11 @@
+%h2.rule_header{style: "font-style:italic"}
+  = @shadowrule.excerpt
+
+.content{style: "max-width:960px; background-color:#dfe1e2; padding:10px"}
+  = @shadowrule.description.gsub("\r\n", "<br />").html_safe
+
+.thanks{style: "margin-top:30px"}
+  .default{style: "float:left"}
+    Added By:
+  .interactive{style: "font-weight:bold; font-size:1.2em; float:left; margin-left:15px"}
+    = AdminUser.find(@shadowrule.added_by).username

@@ -11,6 +11,10 @@ ActiveAdmin.register Shadowrule do
     default_actions if can? :manage, Shadowrule
   end
 
+  show do
+    render "view_helper"
+  end
+
   filter :title
 
   form do |f|
