@@ -223,6 +223,15 @@ de:
       - publik
       - Runner
       - 'Nur ich'
+    attributes:
+      - Staerke
+      - Charisma
+      - Willenskraft
+      - Intelligenz
+      - Konstitution
+      - Schnelligkeit
+      - Essenz
+      - Magie
 
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   # activemodel:

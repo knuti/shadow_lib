@@ -221,3 +221,11 @@ en:
       - public
       - runner
       - myself
+    attributes:
+      - strength
+      - charisma
+      - willpower
+      - intelligence
+      - constitution
+      - speed
+      - essence
