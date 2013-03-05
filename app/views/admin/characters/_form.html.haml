@@ -1,0 +1,40 @@
+= semantic_form_for [:admin, @character] do |f|
+  = f.inputs "General Info" do
+    = f.input :name
+    = f.input :race, collection: Character::CHAR_RACES
+    = f.input :char_class, collection: Character::CHAR_CLASSES
+    = f.input :age
+    = f.input :sex, collection: ['male', 'female']
+    = f.input :description
+
+  = f.inputs "Attributes" do
+    = f.input :constitution
+    = f.input :charisma
+    = f.input :intelligence
+    = f.input :mana
+    = f.input :reaction
+    = f.input :speed
+    = f.input :strength
+    = f.input :willpower
+    = f.input :essence
+    = f.input :initiative
+
+  = f.inputs "Carried Items" do
+    = f.input :cyberware
+    = f.input :gear
+    = f.input :weapons
+    = f.input :armor_items
+    = f.input :ballistic_armor
+    = f.input :burst_armor
+
+  = f.inputs "Impalpable Items" do
+    = f.input :skills
+    = f.input :spells
+    = f.input :connections
+    = f.input :other_stuff
+
+  = f.inputs "Who shall see it?" do
+    = f.input :visibility, collection: Character::CHAR_VISIBILITIES
+    = f.input :admin_user_id, as: :hidden, value: @character.admin_user_id || current_admin_user.id
+
+  = f.actions
