@@ -15,6 +15,10 @@ ActiveAdmin.register Character do
     default_actions if can? :manage, Character
   end
 
+  show do
+    render 'listing'
+  end
+
   filter :name
   filter :char_class
   filter :race

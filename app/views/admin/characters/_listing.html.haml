@@ -1,0 +1,79 @@
+.panel
+  %h3 You Whom Are Chosen ...
+  .panel_contents
+    .attributes_table
+      %div{style: "width:120px;float:left"}
+        = @character.name
+      %div{style: "width:120px;float:left"}
+        = @character.char_class
+      %div{style: "width:120px;float:left"}
+        = @character.race
+      %div{style: "width:120px;float:left"}
+        = @character.age
+      %div{style: "width:120px;float:left"}
+        = @character.sex
+      .clear
+
+.panel
+  %h3 ... Your Strength Lies In
+  .panel_contents
+    .attributes_table
+      - I18n.t('character.attributes').each do |att|
+        %div{style: "width: 100px;float:left"}
+          %h4
+            = att.capitalize
+          %span
+            = @character.send(att.to_sym)
+      %div{style: "width:120px;float:left"}
+        %h4 Initiative
+        = @character.initiative
+    .clear
+
+.panel
+  %h3 Cyberware
+  .panel_contents
+    .attributes_table
+      %div
+        = @character.cyberware
+
+.panel
+  %h3 Gear
+  .panel_contents
+    .attributes_table
+      %div
+        = @character.gear
+
+.panel
+  %h3 Weapons
+  .panel_contents
+    .attributes_table
+      %div
+        = @character.weapons.split("\r\n").join("<br />").html_safe
+
+.panel
+  %h3 Skills
+  .panel_contents
+    .attributes_table
+      %div
+        = @character.skills.split("\r\n").join("<br />").html_safe
+
+.panel
+  %h3 Connections
+  .panel_contents
+    .attributes_table
+      %div
+        = @character.connections.split("\r\n").join("<br />").html_safe
+
+.panel
+  %h3 Armor
+  .panel_contents
+    .attributes_table
+      %div
+        = @character.armor_items.split("\r\n").join("<br />").html_safe
+
+.panel
+  %h3 Your Appearance
+  .panel_contents
+    .attributes_table
+      = @character.description
+
