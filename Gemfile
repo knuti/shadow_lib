@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '1.9.2'
 
 # Basics
 gem 'rails', '3.2.12' # framework
@@ -35,7 +36,6 @@ gem 'haml-rails'
 # gem 'jbuilder'
 
 # To use debugger
-gem 'debugger'
 
 # For better developing
 group :test, :development do
@@ -44,4 +44,5 @@ group :test, :development do
   gem 'simplecov'   # overview of testcoverage
   gem 'capybara'    # allowing to test log in stuff
   gem 'machinist'   # building the models for testing
+  gem 'debugger'
 end
