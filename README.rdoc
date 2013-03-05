@@ -1,10 +1,5 @@
 == Welcome to my shadow-lib
 
-1. Moving private_lib to this one (due to some ideas)
-       <tt>YEAH</tt>
+This project is made to sum up some ideas/rules characters for the Shadowrun pen and paper RPG.
 
-2. Cause I did not know a better way
-
-* just playing around
-* find a way to migrate the data
-
+And for testing purpose.
