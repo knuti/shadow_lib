@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+puts "Chosen Argument: #{ARGV[0] || '...'}"
+
+case ARGV[0].to_s.to_sym
+
+when :console
+  puts "... starting console"
+  system "heroku run rails console --app frozen-peak-6785"
+
+when :log
+  puts "... starting logging"
+  system "heroku logs --tail"
+
+when :migration
+  puts "... running migrations"
+  system "heroku run rake db:migrate"
+
+when :deploy
+  puts "... deploying the app"
+  puts "Starting with updating:"
+  system "git checkout master && git pull"
+  system "git push heroku master"
+
+when :login
+  puts "... keep username and pass ready"
+  system "heroku login"
+
+else
+  puts "Possible commands:"
+  %w(console log migration deploy login).sort.each do |arg|
+    puts "--> " + arg
+  end
+end
