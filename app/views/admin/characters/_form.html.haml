@@ -1,23 +1,29 @@
 = semantic_form_for [:admin, @character] do |f|
   = f.inputs "General Info" do
     = f.input :name
-    = f.input :race, collection: Character::CHAR_RACES
-    = f.input :char_class, collection: Character::CHAR_CLASSES
+    = f.input :race, collection: Character::CHAR_RACES.sort, include_blank: false
+    = f.input :char_class, collection: Character::CHAR_CLASSES.sort, include_blank: false
     = f.input :age
     = f.input :sex, collection: ['male', 'female']
     = f.input :description
 
-  = f.inputs "Attributes" do
+  = f.inputs "Physical Attributes", class: 'attributes' do
     = f.input :constitution
+    = f.input :strength
+    = f.input :reaction
+
+  = f.inputs "Mental Attributes", class: 'attributes' do
     = f.input :charisma
     = f.input :intelligence
-    = f.input :mana
-    = f.input :reaction
-    = f.input :speed
-    = f.input :strength
     = f.input :willpower
+
+  = f.inputs "Other Attributes", class: 'attributes' do
+    = f.input :mana
+    = f.input :speed
     = f.input :essence
     = f.input :initiative
+  .clear
+
 
   = f.inputs "Carried Items" do
     = f.input :cyberware
@@ -34,7 +40,28 @@
     = f.input :other_stuff
 
   = f.inputs "Who shall see it?" do
-    = f.input :visibility, collection: Character::CHAR_VISIBILITIES
+    = f.input :visibility, collection: Character::CHAR_VISIBILITIES.sort, include_blank: false
     = f.input :admin_user_id, as: :hidden, value: @character.admin_user_id || current_admin_user.id
 
   = f.actions
+
+:css
+  .attributes{
+    width: 405px;
+    float: left;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  #character_cyberware,
+  #character_gear,
+  #character_weapons,
+  #character_armor_items,
+  #character_skills,
+  #character_spells,
+  #character_connections,
+  #character_other_stuff,
+  #character_description{
+    height: 120px;
+  }
+
