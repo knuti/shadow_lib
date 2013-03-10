@@ -10,7 +10,7 @@
   = f.inputs "Physical Attributes", class: 'attributes' do
     = f.input :constitution
     = f.input :strength
-    = f.input :reaction
+    = f.input :speed
 
   = f.inputs "Mental Attributes", class: 'attributes' do
     = f.input :charisma
@@ -19,7 +19,7 @@
 
   = f.inputs "Other Attributes", class: 'attributes' do
     = f.input :mana
-    = f.input :speed
+    = f.input :reaction, disabled: true
     = f.input :essence
     = f.input :initiative
   .clear
@@ -65,3 +65,22 @@
     height: 120px;
   }
 
+:javascript
+
+  $('#character_intelligence').on('change', function(){
+    calculateReaction();
+  });
+
+  $('#character_speed').on('change', function(){
+    calculateReaction();
+  });
+
+  calculateReaction = function(){
+    var $int = parseInt( $('#character_intelligence').val() );
+    var $speed = parseInt( $('#character_speed').val() );
+    if ($int != 0 && $speed != 0){
+      $('#character_reaction').val( Math.floor( (( $int + $speed ) / 2) ) );
+    } else {
+      $('#character_reaction').val(0);
+    }
+  }
