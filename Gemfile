@@ -12,7 +12,6 @@ gem 'cancan'    # using this for authorization
 gem 'activeadmin-cancan'
 
 # For deployment on heroku
-gem 'heroku'       # app host
 gem 'unicorn'      # worker for serving requests
 gem 'newrelic_rpm' # monitoring add on for heroku
 
@@ -28,6 +27,7 @@ end
 gem 'jquery-rails'
 gem 'haml'
 gem 'haml-rails'
+# gem 'RedCloth'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
