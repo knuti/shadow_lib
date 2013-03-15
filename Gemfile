@@ -37,6 +37,11 @@ gem 'haml-rails'
 
 # To use debugger
 
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
 # For better developing
 group :test, :development do
   gem 'rspec'       # testing the app
