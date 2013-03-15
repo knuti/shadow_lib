@@ -11,7 +11,7 @@ ActiveAdmin.register Character do
     column :race
     column :char_class
     column :admin_user do |char|
-      char.admin_user.username
+      char.creator.username
     end
     column :updated_at
     column :visibility
