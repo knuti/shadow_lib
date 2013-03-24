@@ -27,15 +27,12 @@ end
 gem 'jquery-rails'
 gem 'haml'
 gem 'haml-rails'
-# gem 'RedCloth'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
-
-# To use debugger
 
 group :development do
   gem 'better_errors'
