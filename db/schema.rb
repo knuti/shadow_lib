@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121224083142) do
+ActiveRecord::Schema.define(:version => 20130325083000) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(:version => 20121224083142) do
     t.string   "initiative",      :limit => 20
     t.text     "gear"
     t.text     "cyberware"
-    t.text     "spells"
     t.text     "weapons"
     t.text     "skills"
     t.text     "connections"
@@ -86,6 +85,11 @@ ActiveRecord::Schema.define(:version => 20121224083142) do
   add_index "characters", ["race"], :name => "index_characters_on_race"
   add_index "characters", ["visibility"], :name => "index_characters_on_visibility"
 
+  create_table "characters_spells", :force => true do |t|
+    t.integer "character_id"
+    t.integer "spell_id"
+  end
+
   create_table "shadowrules", :force => true do |t|
     t.string   "title",       :null => false
     t.string   "excerpt"
@@ -96,5 +100,15 @@ ActiveRecord::Schema.define(:version => 20121224083142) do
   end
 
   add_index "shadowrules", ["title"], :name => "index_shadowrules_on_title"
+
+  create_table "spells", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "kind"
+    t.string   "range"
+    t.string   "category"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
 end
