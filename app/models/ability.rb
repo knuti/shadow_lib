@@ -12,10 +12,12 @@ class Ability
       can :manage, Shadowrule
       can :read, Character, visibility: 'runner'
       can :manage, Character, admin_user_id: admin_user.id
+      can :manage, Spell
 
     elsif admin_user.trainee?
       can :read, Shadowrule
       can :read, Character, visibility: 'public'
+      can :read, Spell
 
     end
 

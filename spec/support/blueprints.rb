@@ -52,3 +52,11 @@ Character.blueprint do
 
   visibility      { "public" }
 end
+
+Spell.blueprint do
+  name        { 'Sleep' }
+  range       { 'touch' }
+  kind        { 'mana' }
+  description { 'makes a victim fall asleep' }
+  category    { 'illusion' }
+end

@@ -1,0 +1,9 @@
+= semantic_form_for [:admin, @spell] do |f|
+  = f.inputs "Create your own (or copy)" do
+    = f.input :name
+    = f.input :category, collection: Spell::SPELL_CATEGORY.sort, include_blank: false
+    = f.input :kind, collection: Spell::SPELL_KIND.sort, include_blank: false
+    = f.input :range, collection: Spell::SPELL_RANGE.sort, include_blank: false
+    = f.input :description, hint: "Describe in short terms, what you want this spell to do and add information about damage and so."
+    = f.actions
+
