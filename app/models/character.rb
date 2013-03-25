@@ -1,9 +1,9 @@
 class Character < ActiveRecord::Base
-  attr_accessible :age, :armor_items, :ballistic_armor, :burst_armor, :char_class, :charisma, :connections, :constitution, :created_at, :cyberware, :description, :essence, :gear, :initiative, :intelligence, :mana, :name, :other_stuff, :race, :reaction, :sex, :skills, :speed, :spells, :strength, :updated_at, :user_id, :visibility, :weapons, :willpower, :admin_user_id
+  attr_accessible :age, :armor_items, :ballistic_armor, :burst_armor, :char_class, :charisma, :connections, :constitution, :created_at, :cyberware, :description, :essence, :gear, :initiative, :intelligence, :mana, :name, :other_stuff, :race, :reaction, :sex, :skills, :speed, :strength, :updated_at, :user_id, :visibility, :weapons, :willpower, :admin_user_id, :spell_ids
 
   belongs_to :creator, class_name: AdminUser, foreign_key: 'admin_user_id'
 
-  CHAR_CLASSES = %w(ki-adept sorcerer shaman decker rigger aspect-wizard)
+  CHAR_CLASSES = %w(ki-adept decker rigger sorcerer shaman aspect-wizard)
   CHAR_RACES = %w(orc dwarf elf human troll)
   CHAR_VISIBILITIES = %w(public runner creator)
   CHAR_ATTRIBUTES = %w(constitution speed strength charisma intelligence willpower essence mana)
@@ -19,4 +19,5 @@ class Character < ActiveRecord::Base
   scope :public_available, where(visibility: 'public')
   scope :runner_allowed, where(visibility: 'runner')
 
+  has_and_belongs_to_many :spells
 end

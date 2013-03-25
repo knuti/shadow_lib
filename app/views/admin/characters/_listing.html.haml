@@ -29,6 +29,15 @@
         = @character.initiative
     .clear
 
+- if @character.char_class.in?(['sorcerer', 'shaman', 'aspect-wizard'])
+  .panel
+    %h3 Spells
+    .panel_content
+      .attributes_table
+        %ul
+          - for spell in @character.spells
+            %li= spell.name.humanize
+
 .panel
   %h3 Cyberware
   .panel_contents

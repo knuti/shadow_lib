@@ -35,9 +35,11 @@
 
   = f.inputs "Impalpable Items" do
     = f.input :skills
-    = f.input :spells
     = f.input :connections
     = f.input :other_stuff
+
+  = f.inputs "Spells", id: 'char_spells' do
+    = f.input :spells, as: :check_boxes
 
   = f.inputs "Who shall see it?" do
     = f.input :visibility, collection: Character::CHAR_VISIBILITIES.sort, include_blank: false
@@ -58,13 +60,13 @@
   #character_weapons,
   #character_armor_items,
   #character_skills,
-  #character_spells,
   #character_connections,
   #character_other_stuff,
   #character_description{
     height: 120px;
   }
-
+  .hidden{
+    display: none;
 :javascript
 
   $('#character_intelligence').on('change', function(){
@@ -83,4 +85,14 @@
     } else {
       $('#character_reaction').val(0);
     }
-  }
+  };
+
+  $('#character_char_class').on('change', function(){
+    value = this.options[this.selectedIndex].innerHTML;
+    if(value == 'sorcerer' || value == 'shaman' || value == 'aspect-wizard'){
+      $('#char_spells').css('display', 'block');
+    } else {
+      $('#char_spells').css('display', 'none');
+    }
+  });
+
