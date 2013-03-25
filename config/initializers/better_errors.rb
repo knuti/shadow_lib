@@ -1,1 +1,1 @@
-BetterErrors.editor = :macvim
+BetterErrors.editor = :macvim if Rails.env == 'development'
