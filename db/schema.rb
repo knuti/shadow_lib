@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130325083000) do
+ActiveRecord::Schema.define(:version => 20130412151413) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(:version => 20130325083000) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
   add_index "admin_users", ["username"], :name => "index_admin_users_on_username", :unique => true
+
+  create_table "character_skills", :force => true do |t|
+    t.integer "character_id"
+    t.integer "skill_id"
+    t.integer "rank"
+    t.string  "specialization"
+    t.integer "specialization_rank"
+  end
 
   create_table "characters", :force => true do |t|
     t.integer  "admin_user_id"
@@ -100,6 +108,11 @@ ActiveRecord::Schema.define(:version => 20130325083000) do
   end
 
   add_index "shadowrules", ["title"], :name => "index_shadowrules_on_title"
+
+  create_table "skills", :force => true do |t|
+    t.string "name"
+    t.text   "description"
+  end
 
   create_table "spells", :force => true do |t|
     t.string   "name"
