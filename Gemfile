@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '1.9.2'
 
 # Basics
-gem 'rails', '3.2.12' # framework
+gem 'rails', '3.2.13' # framework
 gem 'pg'              # database connector
 gem 'activeadmin'     # easy to use backend
 
