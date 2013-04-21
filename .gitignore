@@ -19,6 +19,8 @@
 *.orig
 config/database.yml
 .rvmrc
+.ruby-version
+.ruby-gemset
 .rspec
 .DS_STORE
 */**/.DS_STORE
