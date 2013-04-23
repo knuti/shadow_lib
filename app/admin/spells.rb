@@ -7,10 +7,25 @@ ActiveAdmin.register Spell do
   filter :category, as: :select, collection: Spell::SPELL_CATEGORY
 
   index do
-    column :name
+    column :name do |spell|
+      link_to spell.name, admin_spell_path(spell)
+    end
     column :kind
     column :range
     column :category
+    column 'action items' do |spell|
+      link_to 'edit', edit_admin_spell_path(spell)
+    end
+
+  end
+
+  show do
+    attributes_table do
+      row :name
+      row :description
+      row :kind
+      row :range
+    end
   end
 
   form do
