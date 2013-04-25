@@ -10,7 +10,7 @@ ActiveAdmin.register Character do
     column :name
     column :race
     column :char_class
-    column :admin_user do |char|
+    column "created by" do |char|
       char.creator.username
     end
     column :updated_at
