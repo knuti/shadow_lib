@@ -37,6 +37,11 @@
     = f.input :connections
     = f.input :other_stuff
 
+  = f.inputs "What you're capable of?" do
+    = f.input :temp_skills, as: :text
+    - Skill.all.each do |s|
+      = f.button s.name, class: 'show_box', type: :button
+
   = f.inputs "Spells", id: 'char_spells' do
     = f.input :spells, as: :check_boxes
 
@@ -66,8 +71,21 @@
   }
   .hidden{
     display: none;
-:javascript
+  }
 
+  .show_box {
+    display: inline-block;
+    border-radius: 200px;
+    -webkit-border-radius: 200px;
+    -moz-border-radius: 200px;
+    background: #838a90;
+    background: -webkit-gradient(linear, left top, left bottom, from(#838a90), to(#414549));
+    background: -moz-linear-gradient(-90deg, #838a90, #414549);
+    color: #efefef;
+    padding: 7px 16px 6px;
+  }
+
+:javascript
   $('#character_intelligence').on('change', function(){
     calculateReaction();
   });
