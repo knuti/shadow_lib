@@ -64,7 +64,11 @@
   .panel_contents
     .attributes_table
       %div
-        = @character.skills.split("\r\n").join("<br />").html_safe
+        %ul
+          - for cs in @character.character_skills
+            %li
+              = "#{cs.skill.name} #{cs.rank} (#{cs.specialization || '...'} [#{cs.specialization_rank || 0}])".html_safe
+
 
 .panel
   %h3 Connections
