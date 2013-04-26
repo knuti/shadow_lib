@@ -115,4 +115,10 @@
 
   $(document).on('click', '.show_box', function() {
     console.log(this.innerHTML);
+    var previous = $('#character_temp_skills').html();
+    if (previous.length > 0) {
+      previous += "\n";
+    }
+    $('#character_temp_skills').html( previous + this.innerHTML + " [level] (Spezialisierung [Level])");
   });
+
