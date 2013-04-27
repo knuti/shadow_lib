@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130412151413) do
+ActiveRecord::Schema.define(:version => 20130427184402) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(:version => 20130412151413) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.integer  "role_bits",              :default => 0,  :null => false
+    t.string   "username"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "username"
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
@@ -83,10 +83,10 @@ ActiveRecord::Schema.define(:version => 20130412151413) do
     t.integer  "ballistic_armor", :limit => 2
     t.integer  "burst_armor",     :limit => 2
     t.string   "visibility"
+    t.integer  "age",             :limit => 2
+    t.string   "sex",             :limit => 10
     t.datetime "created_at",                                                  :null => false
     t.datetime "updated_at",                                                  :null => false
-    t.integer  "age"
-    t.string   "sex"
   end
 
   add_index "characters", ["char_class"], :name => "index_characters_on_char_class"
@@ -112,6 +112,7 @@ ActiveRecord::Schema.define(:version => 20130412151413) do
   create_table "skills", :force => true do |t|
     t.string "name"
     t.text   "description"
+    t.string "reference_attribute"
   end
 
   create_table "spells", :force => true do |t|
