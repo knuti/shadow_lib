@@ -67,7 +67,7 @@
         %ul
           - for cs in @character.character_skills
             %li
-              = "#{cs.skill.name} #{cs.rank} (#{cs.specialization || '...'} [#{cs.specialization_rank || 0}]) (#{cs.reference_attribute})".html_safe
+              = "#{cs.skill.name} #{cs.rank} (#{cs.specialization || '...'} [#{cs.specialization_rank || 0}]) (#{cs.skill.reference_attribute})".html_safe
 
 
 .panel
