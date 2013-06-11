@@ -86,13 +86,18 @@
   }
 
 :javascript
-  $('#character_intelligence').on('change', function(){
+# better approach
+  $('#character_speed #character_intelligence').on('change', function(){
     calculateReaction();
   });
 
-  $('#character_speed').on('change', function(){
-    calculateReaction();
-  });
+  //$('#character_intelligence').on('change', function(){
+  //  calculateReaction();
+  //});
+
+  //$('#character_speed').on('change', function(){
+  //  calculateReaction();
+  //});
 
   calculateReaction = function(){
     var $int = parseInt( $('#character_intelligence').val() );
