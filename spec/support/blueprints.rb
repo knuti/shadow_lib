@@ -60,3 +60,7 @@ Spell.blueprint do
   description { 'makes a victim fall asleep' }
   category    { 'illusion' }
 end
+
+Weapon.blueprint do
+  # Attributes here
+end

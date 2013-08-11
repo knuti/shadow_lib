@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427184402) do
+ActiveRecord::Schema.define(:version => 20130811205933) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -98,6 +98,11 @@ ActiveRecord::Schema.define(:version => 20130427184402) do
     t.integer "spell_id"
   end
 
+  create_table "characters_weapons", :force => true do |t|
+    t.integer "character_id"
+    t.integer "weapon_id"
+  end
+
   create_table "shadowrules", :force => true do |t|
     t.string   "title",       :null => false
     t.string   "excerpt"
@@ -123,6 +128,16 @@ ActiveRecord::Schema.define(:version => 20130427184402) do
     t.string   "category"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "weapons", :force => true do |t|
+    t.string  "name"
+    t.string  "range"
+    t.string  "damagecode"
+    t.integer "camouflage"
+    t.string  "reach"
+    t.string  "modes"
+    t.string  "ammunition"
   end
 
 end

@@ -1,0 +1,11 @@
+= semantic_form_for [:admin, @weapon] do |f|
+  = f.inputs "General Info" do
+    = f.input :name
+    = f.input :damagecode
+    = f.input :range, as: :select, collection: ['melee', 'distant'], include_blank: false
+    -# = f.input :type, collection: [[t('.melee', 'melee')], [t('.ranged'), 'ranged']]
+    = f.input :camouflage
+    = f.input :reach
+    = f.input :modes
+    = f.input :ammunition
+    = f.submit
