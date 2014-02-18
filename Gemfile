@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
-ruby '1.9.2'
 
 # Basics
-gem 'rails', '3.2.13' # framework
+gem 'rails', '3.2.17' # framework
 gem 'pg'              # database connector
 gem 'activeadmin'     # easy to use backend
 
@@ -37,6 +36,7 @@ gem 'haml-rails'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'color_routes'
 end
 
 # For better developing
