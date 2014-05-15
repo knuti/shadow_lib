@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Basics
-gem 'rails', '3.2.17' # framework
+gem 'rails', '3.2.18' # framework
 gem 'pg'              # database connector
 gem 'activeadmin'     # easy to use backend
 
